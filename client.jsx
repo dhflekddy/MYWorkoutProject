@@ -1,6 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -9,5 +10,7 @@ import App from './App';
 //   </React.StrictMode>
 // );
 
-ReactDOM.render(<App />, document.querySelector('#root'));
-
+ReactDOM.render(
+    <App />,
+  document.querySelector("#root")
+);
