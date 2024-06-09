@@ -1,0 +1,16 @@
+#price-wrapper{
+    padding: 100px 0px 150px;
+    min-width: 1440px;
+    height: calc(100vh - 68px - 100px - 150px);
+    min-height:960px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(assets/price.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: beige;
+}
