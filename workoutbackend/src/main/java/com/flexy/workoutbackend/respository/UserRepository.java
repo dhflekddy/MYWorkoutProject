@@ -17,9 +17,9 @@ public interface UserRepository extends JpaRepository<UserEntity, String> {
      */
     boolean existsByUserId(String userId);
 
-    // boolean existsByRealname(String nickname);// existsBy가 존재하는지 찾는다의 의미이고 그다음이
+    boolean existsByRealName(String nickname);// existsBy가 존재하는지 찾는다의 의미이고 그다음이
     // where에 오는 값임. 즉 where=Nickname(첫번째 문자는
-    // // 반드시 대문자로)
+    // 반드시 대문자로)
 
     boolean existsByTelNumber(String telNumber);
 

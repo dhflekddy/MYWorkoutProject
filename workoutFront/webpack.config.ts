@@ -53,14 +53,14 @@ const config: Configuration = {
           ],
           env: {
             development: {
-              plugins: [['@emotion', { sourceMap: true }], require.resolve('react-refresh/babel')],
+              plugins: [['@emotion/babel-plugin', { sourceMap: true }], require.resolve('react-refresh/babel')],
             },
             production: {
-              plugins: ['@emotion'],
+              plugins: ['@emotion/babel-plugin'],
             },
           },
         },
-        exclude: path.join(__dirname, 'node_modules'),
+        // exclude: path.join(__dirname, 'node_modules'),
       },
       {
         test: /\.css?$/,
@@ -83,6 +83,7 @@ const config: Configuration = {
       //   files: "./src/**/*",
       // },
     }),
+    
     new webpack.EnvironmentPlugin({ NODE_ENV: isDevelopment ? 'development' : 'production' }),
   ],
   /**
@@ -95,6 +96,8 @@ const config: Configuration = {
     filename: '[name].js',
     publicPath: '/dist/',
   },
+
+  
   devServer: {
     historyApiFallback: true, // 개발중인 프로젝트의 라우팅이 작동되지 않는 문제를 해결하는 devServer의 속성
     port:8080,
@@ -127,3 +130,5 @@ if (!isDevelopment && config.plugins) {
 }
 
 export default config;
+
+

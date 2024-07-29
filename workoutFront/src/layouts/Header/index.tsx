@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 import './style.css'
 // import { Nav } from "./style";
 import {Link, useLocation, useNavigate, useParams} from 'react-router-dom'
-import {AUTH_PATH, MAIN_PATH, USER_PATH, CONTACT_PATH, FACILITIES_PATH, PRICE_PATH, TIMETABLE_PATH } from '../../constant';
+import {AUTH_PATH, MAIN_PATH, USER_PATH, CONTACT_PATH, FACILITIES_PATH, PRICE_PATH, TIMETABLE_PATH, OURLIVE_PATH } from '../../constant';
 import {useCookies} from 'react-cookie';
 // import {GlobalStyles} from "../../../style"  //내가 실험하느라 주석해준거임. 삭제해도됨
 
@@ -135,7 +135,9 @@ export default function Header() {
                 </div>
                 <div>
                     {/* Board프로젝트와는 다르게 Link태그를 사용하므로 onclick속성을 쓰지않고 Link태그의 to속성에 아래와 같이 분기를 작성함 */}
-                    <Link to={(isLogin &&USER_PATH(':id'))||AUTH_PATH()} style={{textDecoration:"none"} } >Our live</Link>
+                    {/* <Link to={(isLogin &&USER_PATH(':id'))||AUTH_PATH()} style={{textDecoration:"none"} } >Our live</Link> */}
+                    <Link to={(isLogin &&OURLIVE_PATH())||AUTH_PATH()} style={{textDecoration:"none"} } >Our live</Link>
+
                 </div>
                 <div>
                     <Link to={CONTACT_PATH()} style={{textDecoration:"none"} }>Contact</Link>

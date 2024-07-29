@@ -1,8 +1,6 @@
 package com.flexy.workoutbackend.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -22,12 +20,11 @@ public class BoardListViewEntity {
     private String title;
     private String content;
     private String titleImage;
-    private int favoriteCount;
+    private int participationCount;
     private int commentCount;
     private int viewCount;
     private String writeDatetime; // DB에서는 datetime타입이지만 서버에서는 String 타입으로 해줌
-    private String writerEmail;
-    private String writerNickname;
+    private String writerId;
+    private String realName;
     private String writerProfileImage;
-    private String userEmail;
 }

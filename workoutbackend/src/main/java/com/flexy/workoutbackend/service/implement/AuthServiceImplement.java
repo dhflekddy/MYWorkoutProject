@@ -90,7 +90,7 @@ public class AuthServiceImplement implements AuthService {
 
         try {
             String id = dto.getId();
-            UserEntity userEntity = userRepository.getById(id);// findById에서 오류나서 바꿈
+            UserEntity userEntity = userRepository.findByUserId(id);// findById에서 오류나서 바꿈
             if (userEntity == null)
                 return SignInResponseDto.signInFail();
             String encodedPassword = userEntity.getPassword();

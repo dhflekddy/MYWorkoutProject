@@ -32,7 +32,6 @@ public class UserServiceImplement implements UserService {
             exception.printStackTrace();
             return ResponseDto.databaseError();
         }
-        System.out.println("반응한다");
 
         return GetSignInUserResponseDto.success(userEntity);
     }

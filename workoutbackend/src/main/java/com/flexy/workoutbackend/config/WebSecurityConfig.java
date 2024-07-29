@@ -37,9 +37,10 @@ public class WebSecurityConfig {
                                                                                                  // 않습니다.
                 .authorizeRequests() // 인증과 관련된 요청처리
 
-                .antMatchers("/", "/api/v1/auth/**", "api/v1/search/**", "file/**").permitAll()// API명세서 보면서 인증절차가 필요없는
+                .antMatchers("/", "/api/v1/auth/**", "/api/v1/search/**", "/file/**").permitAll()// API명세서 보면서 인증절차가
+                                                                                                 // 필요없는
                 // 리소스 url 요청을 모두 permitAll()의 antMatchers에 넣어준다. 9강 18분
-                .antMatchers(HttpMethod.GET, "api/v1/board/**", "api/v1/user/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/board/**", "/api/v1/user/*").permitAll()
                 .anyRequest().authenticated().and() // 어떠한 요청이 들어오든 인증을 실행한다
                 .exceptionHandling().authenticationEntryPoint(new FailedAuthenticationEntryPoint());
 

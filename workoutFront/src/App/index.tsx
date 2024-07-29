@@ -1,5 +1,5 @@
 import loadable from "@loadable/component";
-import { Route, Routes} from "react-router-dom";
+import {Route, Routes}from "react-router-dom"
 import './style.css';
 // import {
 //   GlobalStyles,
@@ -17,7 +17,7 @@ import InputBox from '../components/InputBox'; //  "@components/InputBox"
 import axios from 'axios';
 import useSWR from 'swr';
 import Container from '../layouts/Container';
-import { MAIN_PATH, CONTACT_PATH, FACILITIES_PATH, PRICE_PATH, TIMETABLE_PATH, AUTH_PATH, USER_PATH} from "@constant";
+import { MAIN_PATH, CONTACT_PATH, FACILITIES_PATH, PRICE_PATH, TIMETABLE_PATH, AUTH_PATH, USER_PATH, WORKSPACE_PATH, OURLIVE_PATH} from "@constant";
 import React from "react";
 import { getSignInUserRequest } from "../apis";
 import { User } from "../types/interface";
@@ -25,13 +25,15 @@ import { GetSignInUserResponseDto } from "../apis/response/user";
 import { useCookies } from "react-cookie";
 import { useLoginUserStore } from "../stores";
 import { ResponseDto } from "../apis/response";
-import OurLive from "@views/OurLive";
+// import OurLive from "@views/OurLive";
+// import Workspace from "layouts/Workspace";
 const Home = loadable(() => import("../views/Home"));
 const Price = loadable(() => import("../views/Price"));
 const TimeTable = loadable(() => import("../views/Timetable"));
 const Facility = loadable(() => import("../views/Facilities"));
 const Authentication=loadable(()=>import("../views/Authentication"));
 const Contact=loadable(()=>import("../views/Contact"));
+// const Workspace=loadable(()=>import("../layouts/Workspace"));
 
 function App ()  {
   
@@ -94,13 +96,14 @@ function App ()  {
     <Route element={<Container/>}>
     <Route path={MAIN_PATH()}  element={<Home />}></Route>
     <Route path={AUTH_PATH()} element={<Authentication/>}/>
-    <Route path={USER_PATH(':id')} element={<OurLive/>}/>
+    {/* <Route path={OURLIVE_PATH()} element={<OurLive/>}/> */}
 
     <Route path={FACILITIES_PATH()} element={<Facility />}></Route>
     <Route path={TIMETABLE_PATH()} element={<TimeTable />}></Route>
     <Route path={PRICE_PATH()} element={<Price />}></Route>
     <Route path={CONTACT_PATH()} element={<Contact/>}></Route> 
     </Route>
+    
   </Routes>
   </>
   );
